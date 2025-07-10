@@ -12,7 +12,7 @@ function CssExam02(props) {
     }
 
     return (
-        <>
+        <>  
             <div style={mainCss}></div>
         </>
     );
