@@ -22,6 +22,8 @@ function BoxLayout02(props) {
     const [height, setHeight] = useState(0);
     const [color, setColor] = useState(0);
 
+    
+
     const setBox = () => {
         return <Box02 width={width + 'px'} height={height + 'px'} color={"#" + color}></Box02>
     }
