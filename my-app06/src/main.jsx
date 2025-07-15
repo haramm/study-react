@@ -1,11 +1,8 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-
-
-import UseRefExam01 from '../pages/UseRefExam01.jsx'
+import { createRoot } from 'react-dom/client';
+import UseReducerExam02 from '../pages/UseReducerExam02.jsx'
 
 createRoot(document.getElementById('root')).render(
-  
-    <UseRefExam01 />
-  
+
+    <UseReducerExam02 />
+
 )
