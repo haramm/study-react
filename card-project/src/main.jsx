@@ -1,8 +1,9 @@
 import { createRoot } from 'react-dom/client'
-import CardBoard_answer from './pages/card-answer/CardBoard.jsx'
+import CardBoard from './pages/CardBoard'
+
 
 createRoot(document.getElementById('root')).render(
   
-    <CardBoard_answer/>
+    <CardBoard/>
   
 )

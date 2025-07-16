@@ -19,19 +19,24 @@ function CardBoard_answer(props) {
         setCardList([]);
     }
 
+    const addCard = () => {
+        console.log('aa');
+    }
+
     return (
         <div>
             <main className='container'>
                 <section className='contents'>
                     {
-                        cardList.map(cardNum => (
+                        cardList?.map(cardNum => (
                             <Card number = {cardNum}/>
                         ))
                     }
                 </section>
                 <section className='btn-box'>
-                    <button type='button' className='btn' onClick={createCard}>생성</button>
-                    <button type='button' className='btn' onClick={deleteCard}>삭제</button>
+                    <button className='btn' onClick={createCard}>생성</button>
+                    <button className='btn' onClick={deleteCard}>삭제</button>
+                    <button className='btn' onClick={addCard}>추가</button>
                 </section>
             </main>
         </div>
