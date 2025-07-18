@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+
+.nav {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.active {
+    color: #76ea33;
+}
