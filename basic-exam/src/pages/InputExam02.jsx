@@ -13,7 +13,8 @@ function InputExam02(props) {
     }
 
     useEffect(() => {
-        setSum(Number(sum) + Number(inputNum));
+        if(numList.length === 0) return;
+        setSum(numList.reduce((hap, val) => Number(hap) + Number(val)));
 
     },[numList]);
 
