@@ -3,7 +3,9 @@ import UseCounterStore from './store/UseCounterStore';
 
 function ButtonComp(props) {
 
-    const {addNumber, minusNumber} = UseCounterStore();
+    //const {addNumber, minusNumber} = UseCounterStore();
+    const {addNumber} = UseCounterStore();
+    const {minusNumber} = UseCounterStore();
 
     return (
         <div>

@@ -1,21 +1,24 @@
 import React, { useEffect } from 'react';
 import '../../assets/css/boardDetail.css';
 import axios from 'axios';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useState } from 'react';
+import useBoardStore from '../../store/useBoardStore';
 
 function BoardDetail(props) {
 
     const {id} = useParams();
-    const [detail, setDetail] = useState({title : '', contents : ''});
+    //const [detail, setDetail] = useState({title : '', contents : ''});
+    const {detail, fetchDetail, inputDetail, setBoId} = useBoardStore();
+    //페이지 이동
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getBoard() {
-            const response = await axios(`/api/board/${id}`);
-            setDetail(response.data.data);
+            fetchDetail(id);
         }
         getBoard();
-    },[]);
+    },[id, fetchDetail]);
 
     const validate = () => {
         if(!detail.title.trim().length === 0) {
@@ -43,12 +46,17 @@ function BoardDetail(props) {
         if(validate()) {
             const res = await axios.put(`/api/board/${id}`, detail, header);
             console.log(res.data);
+            let msg = '';
+            msg = res.data.resultMsg === 'OK' ? "수정완료" : "수정실패";
+            alert(msg);
+            //페이지 이동
+            navigate('/board');
         }
     }
 
     const inputHandler = (e) => {
         const {name, value} = e.target;
-        setDetail((prev) => ({...prev, [name]:value}));
+        inputDetail(name,value);
     }
 
     return (
